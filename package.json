@@ -1,0 +1,34 @@
+{
+  "name": "jobits_v2_backend_purple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/main/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pangcurry/jobITs_v2_Backend_Purple.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pangcurry/jobITs_v2_Backend_Purple/issues"
+  },
+  "homepage": "https://github.com/pangcurry/jobITs_v2_Backend_Purple#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "module-alias": "^2.2.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11"
+  },
+  "_moduleAliases": {
+    "@": "src"
+  }
+}
