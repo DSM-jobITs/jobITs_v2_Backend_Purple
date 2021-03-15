@@ -6,7 +6,7 @@ export class User extends ValidationEntity {
   @PrimaryColumn({ length: 15 })
   id: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 60 })
   password: string;
 
   @Column({ length: 5 })
