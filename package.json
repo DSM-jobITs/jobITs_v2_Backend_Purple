@@ -18,15 +18,24 @@
   },
   "homepage": "https://github.com/pangcurry/jobITs_v2_Backend_Purple#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "class-validator": "^0.13.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
     "module-alias": "^2.2.2",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^9.1.1",
+    "typeorm": "^0.2.31",
     "typescript": "^4.2.3"
   },
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/cors": "^2.8.10",
-    "@types/express": "^4.17.11"
+    "@types/express": "^4.17.11",
+    "@types/jsonwebtoken": "^8.5.0"
   },
   "_moduleAliases": {
     "@": "src"

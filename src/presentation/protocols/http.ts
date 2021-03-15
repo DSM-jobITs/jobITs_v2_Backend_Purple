@@ -1,6 +1,6 @@
 export type HttpResponse = {
     status: number,
-    statusCode?: string,
+    statusCode: string,
     message: string,
-    data: any
+    data?: any
 };
