@@ -7,7 +7,7 @@ export class Specialty extends ValidationEntity {
   @PrimaryColumn({ name: "specialty_id", length: 30 })
   specialtyId: string;
 
-  @Column({ length: 20 })
+  @Column({ length: 60 })
   specialty: string;
 
   @Column({ length: 30, name: "qualification_id" })
