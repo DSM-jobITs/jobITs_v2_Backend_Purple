@@ -1,6 +1,14 @@
 import 'module-alias/register';
-import app from './config/app';
+import { createConnection } from 'typeorm';
+import { connectionOptions }  from '../infra/config/ormconfig';
+// import "reflect-metadata";
+// import app from './config/app';
 
 const PORT = 3002;
 
-app.listen(PORT, () => console.log(`server open on ${PORT} port !!!`));
+createConnection(connectionOptions)
+    .then(async () => {
+        const app = (await import('./config/app')).default;
+        app.listen(PORT, () => console.log(`server open on ${PORT} port !!!`));        
+    })
+    .catch(error => console.log(error));
