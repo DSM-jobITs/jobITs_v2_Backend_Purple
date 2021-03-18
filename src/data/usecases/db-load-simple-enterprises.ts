@@ -15,7 +15,6 @@ export class DbLoadSimpleEnterprises implements LoadSimpleEnterprises {
                     error: new NoListError()
                 };
             }
-            console.log(list);
             return { list };
         }
         catch(err) {

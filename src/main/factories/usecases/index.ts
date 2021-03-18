@@ -5,3 +5,5 @@ export * from './update-account-factory';
 export * from './token-authentication';
 
 export * from './load-simple-enterprises-factory';
+
+export * from './load-home-notices-factory';

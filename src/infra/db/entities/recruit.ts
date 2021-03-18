@@ -1,10 +1,13 @@
-import { Entity, PrimaryColumn, Column, JoinColumn, ManyToOne } from "typeorm";
+import { Entity, PrimaryColumn, Column, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { ValidationEntity } from "./validation";
 import { Enterprise } from "./enterprise";
 
 @Entity()
 export class Recruit extends ValidationEntity {
-  @PrimaryColumn({ name: "recruit_id", length: 30 })
+  @PrimaryGeneratedColumn({ name: "recruit_no" })
+  recruitNo: number;
+
+  @Column({ name: "recruit_id", length: 30, nullable: false, unique: true })
   recruitId: string;
 
   @Column({ length: 10, type: "char", nullable: true })
@@ -39,7 +42,7 @@ export class Recruit extends ValidationEntity {
 
   @Column({ name: "ent_no", length: 12 })
   entNo: string;
-
+  
   @ManyToOne((type) => Enterprise, (enterprise) => enterprise.entNo, {
     onUpdate: "CASCADE",
     onDelete: "CASCADE",

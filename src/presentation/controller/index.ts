@@ -7,3 +7,5 @@ export * from './info-controller';
 export * from './token-controller';
 
 export * from './recruit-basic-controller';
+
+export * from './home-notice-controller';

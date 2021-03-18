@@ -7,3 +7,5 @@ export * from './info-controller-factory';
 export * from './token-controller-factory';
 
 export * from './recruit-basic-controller-factory';
+
+export * from './home-notice-controller-factory';
