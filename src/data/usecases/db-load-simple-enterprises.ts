@@ -1,10 +1,10 @@
 import { LoadSimpleEnterprises } from "../../domain/usecases";
-import { RecruitRepository } from "../../infra/db/repositories";
 import { NoListError, ServerError } from "../../presentation/errors";
+import { LoadSimpleEnterprisesRepository } from "../protocols/repository/recruit";
 
 export class DbLoadSimpleEnterprises implements LoadSimpleEnterprises {
     constructor(
-        private readonly recruitRepository: RecruitRepository
+        private readonly recruitRepository: LoadSimpleEnterprisesRepository
     ) {}
     async load(): Promise<LoadSimpleEnterprises.Result> {
         try {

@@ -1,9 +1,9 @@
 import { EntityRepository, getRepository } from "typeorm";
-import { LoadHomeNoticesRecruitRepository, LoadSimpleEnterprisesRepository } from "../../../data/protocols/repository/recruit";
+import { LoadHomeNoticesRecruitRepository, LoadRecruitResultsRepository, LoadSimpleEnterprisesRepository } from "../../../data/protocols/repository/recruit";
 import { Recruit } from "../entities";
 
 @EntityRepository(Recruit)
-export class RecruitRepository implements LoadSimpleEnterprisesRepository, LoadHomeNoticesRecruitRepository {
+export class RecruitRepository implements LoadSimpleEnterprisesRepository, LoadHomeNoticesRecruitRepository, LoadRecruitResultsRepository {
     async load(): Promise<LoadSimpleEnterprisesRepository.Result> {
         return await getRepository(Recruit)
             .createQueryBuilder('recruit')
@@ -22,5 +22,19 @@ export class RecruitRepository implements LoadSimpleEnterprisesRepository, LoadH
             .orderBy('recruit.recruit_no', 'DESC')
             .limit(5)
             .getRawMany();
+    }
+    async loadRecruitResults(input: LoadRecruitResultsRepository.input): Promise<LoadRecruitResultsRepository.Result> {
+        const { name, specialty, address, worker } = input;
+        return await getRepository(Recruit)
+            .createQueryBuilder('recruit')
+            .innerJoin('enterprise', 'enterprise', 'recruit.ent_no = enterprise.ent_no')
+            .innerJoin('qualification', 'qualification', 'recruit.recruit_id = qualification.recruit_id')
+            .where(`enterprise.name like '%${name}%'`)
+            .andWhere(`qualification.specialty like '%${specialty}%'`)
+            .andWhere(`enterprise.address like  '%${address}%'`)
+            .andWhere(`enterprise.workers >= ${worker}`)
+            .select(['recruit.recruit_id', 'enterprise.introduce', 'enterprise.name', 'qualification.specialty', 'recruit.deadline'])
+            .orderBy('recruit.reception', 'DESC')
+            .getRawMany()
     }
 }

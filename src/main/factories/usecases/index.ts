@@ -7,3 +7,4 @@ export * from './token-authentication';
 export * from './load-simple-enterprises-factory';
 
 export * from './load-home-notices-factory';
+export * from './load-recruit-search-result-factory';

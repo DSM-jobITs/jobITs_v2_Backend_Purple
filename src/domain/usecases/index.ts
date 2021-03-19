@@ -5,3 +5,4 @@ export * from './update-account';
 export * from './token-authentication';
 export * from './load-simple-enterprises';
 export * from './load-home-notices';
+export * from './load-recruit-results';
