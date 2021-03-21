@@ -6,8 +6,11 @@ export const adaptRoute = (controller: Controller ) => {
     return async (req: Request, res: Response) => {
         const request = {
             ...(req.body || {}),
-            ...(req.params || {})
+            ...(req.params || {}),
+            ...(req.query || {})
         };
+        // console.log(typeof req.query.numOfWorker);
+        
         const httpResponse = await controller.handle(request);
         const { status, statusCode, message, data } = httpResponse;
         if(200 <= status && status <= 299) {
