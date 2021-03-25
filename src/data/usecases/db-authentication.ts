@@ -33,7 +33,7 @@ export class DbAuthentication implements Authentication {
             // const isVlid = true;    // 임시로 비번 오픈
             if(isVlid) {
                 let isAdmin: boolean = false;
-                if(user.name === admin_config.name) {
+                if(user.id === admin_config.name) {
                     isAdmin = true;
                 }
                 const accessToken = await this.jwtEncrypter.encrypt({
