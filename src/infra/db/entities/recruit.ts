@@ -26,6 +26,9 @@ export class Recruit extends ValidationEntity {
   endTime: string;
 
   @Column({ nullable: true })
+  allowance: number;
+
+  @Column({ nullable: true })
   salary: number;
 
   @Column({ nullable: true })
