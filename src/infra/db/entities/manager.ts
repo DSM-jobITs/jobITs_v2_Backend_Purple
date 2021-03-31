@@ -19,6 +19,9 @@ export class Manager extends ValidationEntity {
   @IsEmail()
   managerEmail: string;
 
+  @Column({ length: 5, name: "manager_name", nullable: false })
+  managerName: string;
+
   @OneToOne((type) => Enterprise, (enterprise) => enterprise.entNo, {
     onUpdate: "CASCADE",
     onDelete: "CASCADE",

@@ -19,10 +19,10 @@ export class Recruit extends ValidationEntity {
   @Column({ type: "tinyint", name: "recruit_plan", nullable: true })
   recruitPlan: boolean;
 
-  @Column({ length: 5, type: "char", name: "start_time", nullable: true })
+  @Column({ length: 5, type: "char", name: "start_time", nullable: true, default: "09:00" })
   startTime: string;
 
-  @Column({ length: 5, type: "char", name: "end_time", nullable: true })
+  @Column({ length: 5, type: "char", name: "end_time", nullable: true, default: "17:00" })
   endTime: string;
 
   @Column({ nullable: true })
