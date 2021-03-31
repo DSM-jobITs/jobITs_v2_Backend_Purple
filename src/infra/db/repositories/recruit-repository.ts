@@ -19,7 +19,7 @@ export class RecruitRepository implements LoadSimpleEnterprisesRepository, LoadH
             .createQueryBuilder('recruit')
             .innerJoin('enterprise', 'enterprise', 'recruit.ent_no = enterprise.ent_no')
             .select(['recruit.recruit_no', 'recruit.reception', 'enterprise.name'])
-            .orderBy('recruit.recruit_no', 'DESC')
+            .orderBy('recruit.recruit_no', 'ASC')
             .limit(5)
             .getRawMany();
     }
