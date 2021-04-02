@@ -4,6 +4,7 @@ export interface LoadHomeNotices {
 
 export namespace LoadHomeNotices {
     export type Recruit = {
+        recruit_recruit_id: string,
         recruit_recruit_no: number,
         recruit_reception: string,
         enterprise_name: string

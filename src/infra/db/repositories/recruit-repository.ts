@@ -18,7 +18,7 @@ export class RecruitRepository implements LoadSimpleEnterprisesRepository, LoadH
         return await getRepository(Recruit)
             .createQueryBuilder('recruit')
             .innerJoin('enterprise', 'enterprise', 'recruit.ent_no = enterprise.ent_no')
-            .select(['recruit.recruit_no', 'recruit.reception', 'enterprise.name'])
+            .select(['recruit.recruit_id','recruit.recruit_no', 'recruit.reception', 'enterprise.name'])
             .orderBy('recruit.recruit_no', 'DESC')
             .limit(5)
             .getRawMany();
