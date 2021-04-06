@@ -14,8 +14,8 @@ const refreshToken_config = {
 }
 
 const admin_config = {  // 추후 env처리
-    name: "JOBITS_ADMIN",
-    numOfName: 12
+    name: "JOBITS_ADMIN1",
+    numOfName: 13
 }
 
 export class DbAuthentication implements Authentication {
