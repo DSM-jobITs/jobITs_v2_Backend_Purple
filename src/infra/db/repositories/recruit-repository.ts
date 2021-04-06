@@ -12,6 +12,7 @@ export class RecruitRepository implements LoadSimpleEnterprisesRepository, LoadH
             // .innerJoin('specialty', 'specialty', 'qualification.qualification_id = specialty.qualification_id')
             .select(['recruit.recruit_id', 'enterprise.introduce', 'enterprise.name', 'qualification.specialty', 'recruit.deadline'])
             .orderBy('recruit.reception', 'DESC')
+            .orderBy('recruit.recruit_no', 'DESC')
             .getRawMany();
     }
     async loadHomeNoticesRecruit(): Promise<LoadHomeNoticesRecruitRepository.Result> {
