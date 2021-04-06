@@ -25,7 +25,7 @@ export class Recruit extends ValidationEntity {
   @Column({ length: 5, type: "char", name: "end_time", nullable: true, default: "17:00" })
   endTime: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, length: 20 })
   allowance: number;
 
   @Column({ nullable: true })
