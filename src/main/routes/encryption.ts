@@ -1,8 +1,6 @@
 import { Request, Response, Router } from 'express';
 
 import bcrypt from 'bcrypt';
-import { EntityRepository } from "typeorm";
-import { User } from '../../infra/db/entities';
 
 export default (router: Router): void => {
     router.get('/encryption', async (req:Request, res: Response) => {
