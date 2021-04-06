@@ -9,6 +9,7 @@ export class DbLoadSimpleEnterprises implements LoadSimpleEnterprises {
     async load(): Promise<LoadSimpleEnterprises.Result> {
         try {
             const list = await this.recruitRepository.load();
+            console.log(list);
             if(list === []) {
                 return {
                     list: [],
