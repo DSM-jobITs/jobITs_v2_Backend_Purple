@@ -3,19 +3,20 @@ import { AuthenticationFailureError, UserNotFoundError } from "../../presentatio
 import { forbidden, notFound } from "../../presentation/helpers";
 import { Encrypter, HashComparer } from "../protocols/cryptography";
 import { LoadUserByEmailRepository } from "../protocols/repository";
+import env from '../../main/config/env';
 
 const accessToken_config = {
-    issuer: 'JobITs',
-    expiresIn: '10d'
+    issuer: env.accessToken.issuer,
+    expiresIn: env.accessToken.expiresIn
 }
 const refreshToken_config = {
-    issuer: 'JobITs',
-    expiresIn: '100d'
+    issuer: env.refreshToken.issuer,
+    expiresIn: env.refreshToken.expiresIn
 }
 
 const admin_config = {  // 추후 env처리
-    name: "JOBITS_ADMIN",
-    numOfName: 13
+    name: env.admin.name,
+    numOfName: env.admin.length
 }
 
 export class DbAuthentication implements Authentication {

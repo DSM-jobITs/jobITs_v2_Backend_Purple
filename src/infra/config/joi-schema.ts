@@ -1,8 +1,9 @@
 import Joi from 'joi';
+import env from '../../main/config/env';
 
 const admin_config = {  // 추후 env처리
-    name: "JOBITS_ADMIN1",
-    numOfName: 13
+    name: env.admin.name,
+    numOfName: env.admin.length
 }
 
 export const schema = Joi.object().keys({

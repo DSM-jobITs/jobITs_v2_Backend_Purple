@@ -1,5 +1,4 @@
 import { JoiAdapter } from "../../infra/validators";
-import { SigninAdminController } from "../../presentation/controller";
 import { InvalidParamError, ServerError } from "../../presentation/errors";
 import { joiValidation } from "../../presentation/protocols";
 
