@@ -23,6 +23,6 @@ export class Welfare extends ValidationEntity{
     onUpdate: "CASCADE",
     onDelete: "CASCADE",
   })
-  @JoinColumn({ name: "recruit_id" })
+  @JoinColumn({ name: "recruit_id", referencedColumnName: "recruitId" })
   recruit: Recruit;
 }

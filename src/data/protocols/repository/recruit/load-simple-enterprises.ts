@@ -7,7 +7,7 @@ export namespace LoadSimpleEnterprisesRepository {
         recruit_deadline: string,
         enterprise_name: string,
         enterprise_introduce: string,
-        specialty_specialty: string,
+        qualification_specialty: string,
         recruit_id: string
     }
     export type Result = LoadSimpleEnterprisesRepository.Enterprise[]

@@ -1,8 +1,9 @@
 import { Encrypter, Verifier } from "../../data/protocols/cryptography";
 import jwt from 'jsonwebtoken';
 import { InvalidTokenError } from "../../presentation/errors";
+import env from "../../main/config/env";
 
-const jwt_secret = "어쩌구저쩌구복잡한키";  // env값으로 설정하기
+const { jwt_secret } = env.token;  // env값으로 설정하기
 
 export class JwtAdapter implements Encrypter, Verifier{
     constructor() {}

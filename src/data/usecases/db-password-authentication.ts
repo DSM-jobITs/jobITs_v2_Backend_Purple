@@ -4,20 +4,6 @@ import { forbidden, notFound } from "../../presentation/helpers";
 import { HashComparer } from "../protocols/cryptography";
 import { LoadUserByEmailRepository } from "../protocols/repository";
 
-// const accessToken_config = {
-//     issuer: 'JobITs',
-//     expiresIn: '10d'
-// }
-// const refreshToken_config = {
-//     issuer: 'JobITs',
-//     expiresIn: '100d'
-// }
-
-// const admin_config = {  // 추후 env처리
-//     name: "JOBITS_ADMIN",
-//     numOfName: 12
-// }
-
 export class DbPasswordAuthentication implements PasswordAuthentication {
     constructor(
         private readonly loadAccountByEmailRepository: LoadUserByEmailRepository,

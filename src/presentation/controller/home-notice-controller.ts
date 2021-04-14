@@ -1,24 +1,23 @@
-import { LoadSimpleEnterprises } from "../../domain/usecases";
+import { LoadHomeNotices } from "../../domain/usecases";
 import { ServerError } from "../errors";
 import { notFound, ok, serverError } from "../helpers";
 import { Controller, HttpResponse } from "../protocols";
 
-export class RecruitBasicController implements Controller {
+export class HomeNoticeController implements Controller {
     constructor(
-        private readonly loadSimpleEnterprises: LoadSimpleEnterprises
+        private readonly loadHomeNotices: LoadHomeNotices
     ) {}
     async handle(): Promise<HttpResponse> {
         try {
-            const data = await this.loadSimpleEnterprises.load();
-            const { error, list } = data;
+            const data = await this.loadHomeNotices.load();
+            const { error } = data;
             if(error) {
                 if(error.message === `Internal server error`) {
                     return serverError(error);
                 }
                 return notFound(error);
             }
-            return ok({ list });
-            // reception을 기준으로 db에서 목록 가지고 오기
+            return ok({ ...data });
         }
         catch(err) {
             console.log(err);

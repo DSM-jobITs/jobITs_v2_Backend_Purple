@@ -23,7 +23,7 @@ export class Enterprise extends ValidationEntity {
   @Column({ length: 255, nullable: true })
   introduce: string;
 
-  @Column({ length: 50, nullable: true })
+  @Column({ length: 50, nullable: true, default: "정보통신업" })
   sector: string;
 
   @Column({ length: 40, nullable: true })

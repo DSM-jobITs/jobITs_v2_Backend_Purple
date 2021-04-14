@@ -1,5 +1,5 @@
 import { BaseEntity, BeforeInsert, BeforeUpdate } from "typeorm";
-import { validateOrReject,validate } from "class-validator";
+import { validateOrReject } from "class-validator";
 
 export abstract class ValidationEntity extends BaseEntity {
   @BeforeInsert()

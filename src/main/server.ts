@@ -1,10 +1,11 @@
 import 'module-alias/register';
 import { createConnection } from 'typeorm';
 import { connectionOptions }  from '../infra/config/ormconfig';
+import env from './config/env';
 // import "reflect-metadata";
 // import app from './config/app';
 
-const PORT = 3002;
+const PORT = env.server.port;
 
 createConnection(connectionOptions)
     .then(async () => {

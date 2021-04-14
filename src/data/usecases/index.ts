@@ -4,3 +4,5 @@ export * from './db-password-authentication';
 export * from './db-update-account';
 export * from './db-token-authentication';
 export * from './db-load-simple-enterprises';
+export * from './db-load-home-notices';
+export * from './db-load-recruit-results';

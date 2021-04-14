@@ -1,21 +1,21 @@
 import { LoadSimpleEnterprises } from "../../domain/usecases";
-import { RecruitRepository } from "../../infra/db/repositories";
 import { NoListError, ServerError } from "../../presentation/errors";
+import { LoadSimpleEnterprisesRepository } from "../protocols/repository/recruit";
 
 export class DbLoadSimpleEnterprises implements LoadSimpleEnterprises {
     constructor(
-        private readonly recruitRepository: RecruitRepository
+        private readonly recruitRepository: LoadSimpleEnterprisesRepository
     ) {}
     async load(): Promise<LoadSimpleEnterprises.Result> {
         try {
             const list = await this.recruitRepository.load();
+            console.log(list);
             if(list === []) {
                 return {
                     list: [],
                     error: new NoListError()
                 };
             }
-            console.log(list);
             return { list };
         }
         catch(err) {
